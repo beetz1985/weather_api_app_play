@@ -1,0 +1,80 @@
+* > {
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin:0;
+    padding:0;
+}
+
+.header {
+    background-color: lightblue;
+    height:80px;
+    margin-bottom:5px;
+}
+
+.main-content {
+    display:flex;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sidebar-left {
+    background-color: lightgrey;
+    flex: 1;
+    margin:5px;
+    padding:5px;
+    min-height: 100vh;
+
+    display:flex;
+    flex-direction: column;
+}
+
+.main-panel {
+    background-color: lightgrey;
+    margin:5px;
+    padding:10px;
+    flex:3;
+    min-height: 100vh;
+
+
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 215px)); 
+    grid-auto-rows: 300px;
+    gap:10px;
+}
+
+.card-item {
+    background-color: #fff;
+}
+
+.ticket-item {
+    background-color: #fff;
+    margin:5px;
+    height:40px;
+    padding:5px;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ticket-item button {
+    font-size:1.1rem;
+    cursor: pointer;
+    margin:0 10px;
+}
+
+.card-item button {
+    border-radius: 30px;
+    border: 1px solid rgb(119, 119, 119);
+    font-size:1.1rem;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
