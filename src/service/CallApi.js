@@ -1,17 +1,17 @@
-function CallApi() {
+function CallApi({locationCity}) {
 
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '1c63c3d514mshd895c6733c49ce9p138bd9jsn0cc2346e2b79',
-            'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-        }
-    };
+    const apiKey = `key=88f681c472d44de5b49120737222009`;
+    const location = `&q=${locationCity}`;
+    const corsProxy = `https://cors-anywhere.herokuapp.com/`;
+
     
-    return fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=London&days=5', options)
+    return fetch(`http://api.weatherapi.com/v1/current.json?${apiKey}${location}` )
         .then(response => response.json())
-        .then(response => console.log(response))
+        .then(response => response)
         .catch(err => console.error(err));
+
+
+    
 }
 
 export default CallApi

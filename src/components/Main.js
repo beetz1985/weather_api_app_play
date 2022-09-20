@@ -4,12 +4,12 @@ import Card from './Card'
 function Main(props) {
 
     const cardElements = props.data.map((v, i)=>{
-            return <Card key={i + 100} value={v.location} id={i + 100} {...v} removeCard={props.removeCard}/>
+            return <Card key={i + 100} value={v.location.name} id={i + 100} {...v} removeCard={props.removeCard}/>
     })
 
     return (
         <section className="main-panel">
-           {cardElements}
+            {cardElements}
         </section>
     )
 }

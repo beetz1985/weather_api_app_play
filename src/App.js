@@ -13,17 +13,26 @@ function App() {
     const [cards, setCards] = React.useState([]);
 
     React.useEffect(()=>{
-        //CallApi();
-        setTickets(data);
+        if(tickets.length + cards.length < data.length) {
+            data.forEach((v)=>{
+                CallApi({locationCity: v.location})
+                    .then(returnData=>setTickets((s)=>{
+                        return [...s, returnData]
+                    }))
+            })            
+        }
     }, [data])
 
- 
+    // console.log(tickets)
+    // console.log(cards)
+    // console.log("---")
+
     function handleTickClick(e) {
         e.preventDefault();
 
         const el = e.target.value;
-        setTickets(s=>s.filter(v=>v.location !== el))
-        const item = data.find(v=>v.location === el)
+        const item = tickets.find(v=>v.location.name === el)
+        setTickets(s=>s.filter(v=>v.location.name !== el))
         setCards(s=>[...s, item])
     }
 
@@ -31,8 +40,8 @@ function App() {
         e.preventDefault();
 
         const el = e.target.value;
-        setCards(s=>s.filter(v=>v.location !== el))
-        const item = data.find(v=>v.location === el)
+        const item = cards.find(v=>v.location.name === el)
+        setCards(s=>s.filter(v=>v.location.name !== el))
         setTickets(s=>[item, ...s])
     }
 
