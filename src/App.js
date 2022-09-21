@@ -23,6 +23,8 @@ function App() {
         }
     }, [data])
 
+    //console.log(tickets)
+ 
     // console.log(tickets)
     // console.log(cards)
     // console.log("---")

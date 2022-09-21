@@ -2,6 +2,7 @@ import React from "react";
 
 function Ticket(props) {
 
+
     return (
         <div id={props.id} value={props.location.name} className="ticket-item" >
             <h2>{props.location.name}</h2>
